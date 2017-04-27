@@ -15,43 +15,43 @@ class ControlsSpec extends WordSpec with Matchers with PropertyChecks {
 
       "Long" in {
         forAll { (n: Long) =>
-          math.signum(n) shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe math.signum(n)
         }
       }
 
       "Double" in {
         forAll { (n: Double) =>
-          math.signum(n) shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe math.signum(n)
         }
       }
 
       "Float" in {
         forAll { (n: Float) =>
-          math.signum(n) shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe math.signum(n)
         }
       }
 
       "Int" in {
         forAll { (n: Int) =>
-          math.signum(n) shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe math.signum(n)
         }
       }
 
       "Short" in {
         forAll { (n: Short) =>
-          math.signum(n) shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe math.signum(n)
         }
       }
 
       "BigDecimal" in {
         forAll { (n: BigDecimal) =>
-          n.signum shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe n.signum
         }
       }
 
       "BigInteger" in {
         forAll { (n: BigInt) =>
-          n.signum shouldBe implementation.signum(n)
+          implementation.signum(n) shouldBe n.signum
         }
       }
     }
