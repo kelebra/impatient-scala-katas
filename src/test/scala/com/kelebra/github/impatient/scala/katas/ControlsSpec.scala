@@ -7,6 +7,7 @@ import org.scalatest.{Matchers, WordSpec}
 class ControlsSpec extends WordSpec with Matchers with PropertyChecks with MockFactory {
 
   lazy val implementation: Controls = Controls
+  private val eps = 1e-3
 
   private def `work for type` = afterWord("work for type")
 
@@ -74,6 +75,43 @@ class ControlsSpec extends WordSpec with Matchers with PropertyChecks with MockF
           out expects 1
         } returning Unit
         implementation.countdown()(out)
+      }
+    }
+
+    "both product(Recursive) implemented" should {
+
+      "return the same results" in {
+        forAll { (in: String) =>
+          implementation.product(in) shouldBe implementation.productRecursive(in)
+        }
+      }
+    }
+
+    "implemented product method" should {
+
+      "return 1 for empty string" in {
+        implementation.product("") shouldBe 1
+      }
+
+      "return 9415087488 for 'Hello'" in {
+        implementation.product("Hello") shouldBe 9415087488L
+      }
+    }
+
+    "pow method implemented" should `work for type` {
+
+      "odd positive integer" in {
+        implementation.pow(2, 15) shouldBe math.pow(2, 15)
+      }
+
+      "even positive integer" in {
+        implementation.pow(2, 14) shouldBe math.pow(2, 14)
+      }
+
+      "any integer" in {
+        forAll { (x: Int, n: Int) =>
+          implementation.pow(x, n) shouldBe math.pow(x, n) +- eps
+        }
       }
     }
   }
