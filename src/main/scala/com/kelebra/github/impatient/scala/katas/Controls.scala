@@ -48,7 +48,7 @@ trait Controls {
   /**
     * Compute x power n
     *
-    * @param x any integral
+    * @param x any double precision number
     * @param n BigDecimal
     * @return x power n
     */
@@ -60,22 +60,22 @@ trait Controls {
   */
 object Controls extends Controls {
 
+  import Numeric.Implicits._
+  import Ordering.Implicits._
+
   override def signum[T](n: T)(implicit numeric: Numeric[T]): Int = {
     val zero = numeric.fromInt(0)
-
-    if (numeric.lt(n, zero)) -1
-    else if (numeric.gt(n, zero)) 1
+    if (n < zero) -1
+    else if (n > zero) 1
     else 0
   }
 
   @tailrec
-  override def countdown[T](from: T, to: T, step: T)(out: (T) => Unit)(implicit numeric: Numeric[T]): Unit = {
-    import Numeric.Implicits._
-    if (numeric.gteq(from, to)) {
+  override def countdown[T](from: T, to: T, step: T)(out: (T) => Unit)(implicit numeric: Numeric[T]): Unit =
+    if (from >= to) {
       out(from)
       countdown(from - step, to, step)(out)
     }
-  }
 
   override def product(in: String): BigInt = (BigInt(1) /: in) (_ * _.toLong)
 
