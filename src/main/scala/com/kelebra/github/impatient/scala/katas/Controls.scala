@@ -49,7 +49,7 @@ trait Controls {
     * Compute x power n
     *
     * @param x any double precision number
-    * @param n BigDecimal
+    * @param n power
     * @return x power n
     */
   def pow(x: Double, n: Int): Double
