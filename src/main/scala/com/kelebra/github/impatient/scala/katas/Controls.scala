@@ -71,7 +71,7 @@ object Controls extends Controls {
   }
 
   @tailrec
-  override def countdown[T](from: T, to: T, step: T)(out: (T) => Unit)(implicit numeric: Numeric[T]): Unit =
+  override def countdown[T](from: T, to: T, step: T)(out: T => Unit)(implicit numeric: Numeric[T]): Unit =
     if (from >= to) {
       out(from)
       countdown(from - step, to, step)(out)
