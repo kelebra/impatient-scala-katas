@@ -88,7 +88,7 @@ object Controls extends Controls {
 
   override def pow(x: Double, n: Int): Double =
     if (x == 1 || (x == 0 && n == 0)) 1
-    else if (x == 0 && n == -1) Double.PositiveInfinity
+    else if (x == 0 && n < 0) Double.PositiveInfinity
     else if (x == 0) 0
     else n match {
       case 0               => 1

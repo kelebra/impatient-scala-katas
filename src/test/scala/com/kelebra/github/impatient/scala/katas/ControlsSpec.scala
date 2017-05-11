@@ -110,7 +110,9 @@ class ControlsSpec extends WordSpec with Matchers with PropertyChecks with MockF
 
       "any integer" in {
         forAll { (x: Int, n: Int) =>
-          implementation.pow(x, n) shouldBe math.pow(x, n) +- eps
+          whenever(n >= -100 && n <= 100) {
+            implementation.pow(x, n) shouldBe math.pow(x, n) +- eps
+          }
         }
       }
     }
