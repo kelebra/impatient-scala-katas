@@ -1,22 +1,11 @@
 target/
-lib_managed/
-src_managed/
-project/boot/
 .history
 .cache
 .idea/
 
 ### Scala template
 *.class
-*.log
 
 # sbt specific
-.lib/
-dist/*
-project/plugins/project/
-
-# Scala-IDE specific
-.scala_dependencies
-.worksheet
 
 

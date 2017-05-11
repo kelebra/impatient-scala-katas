@@ -6,6 +6,9 @@ import scala.annotation.tailrec
 import scala.collection.mutable.ArrayBuffer
 import scala.reflect.ClassTag
 
+/**
+  * Chapter 3: Working with arrays
+  */
 trait Arrays {
 
   /**
@@ -40,7 +43,8 @@ trait Arrays {
     * @tparam T integral element type
     * @return new array where positive numbers come first and negative with zeroes afterwards in original order
     */
-  def positiveFirstWithOriginalOrder[T: ClassTag](array: Array[T])(implicit integral: Integral[T]): Array[T]
+  def positiveFirstWithOriginalOrder[T: ClassTag](array: Array[T])
+                                                 (implicit integral: Integral[T]): Array[T]
 
   /**
     * Computes average of array elements
