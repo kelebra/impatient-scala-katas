@@ -116,7 +116,8 @@ object Arrays extends Arrays {
       }
       .toArray[T]
 
-  override def positiveFirstWithOriginalOrder[T: ClassTag](array: Array[T])(implicit integral: Integral[T]): Array[T] = {
+  override def positiveFirstWithOriginalOrder[T: ClassTag](array: Array[T])
+                                                          (implicit integral: Integral[T]): Array[T] = {
 
     val destination: Array[T] = Array.ofDim(array.length)
 
