@@ -108,5 +108,12 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
         implementation.deduplicate(Array(2, 2, 2, 2, 1, 1, 5, 5, 1, 1, 3, 3, 3, 4), out)
       }
     }
+
+    "method allAmericanTimezones is implemented" should {
+
+      "return list of correct size" in {
+        implementation.allAmericanTimezones.length shouldBe 165
+      }
+    }
   }
 }
