@@ -17,7 +17,8 @@ trait Arrays {
     * @param n upper bound
     * @tparam T integral type
     */
-  def range[T: ClassTag](n: T)(implicit integral: Integral[T]): Array[T]
+  def range[T: ClassTag](n: T)
+                        (implicit integral: Integral[T]): Array[T]
 
   /**
     * Swaps adjacent elements in array
@@ -60,7 +61,8 @@ trait Arrays {
     * @param array of elements
     * @tparam T element type
     */
-  def sortedInReverseOrder[T](array: ArrayBuffer[T])(implicit ord: Ordering[T]): Unit
+  def sortedInReverseOrder[T](array: ArrayBuffer[T])
+                             (implicit ord: Ordering[T]): Unit
 
   /**
     * Outputs all unique values in array
@@ -69,7 +71,8 @@ trait Arrays {
     * @param out   output function
     * @tparam T element type
     */
-  def deduplicate[T](array: Array[T], out: T => Unit)(implicit ord: Ordering[T]): Unit
+  def deduplicate[T](array: Array[T], out: T => Unit)
+                    (implicit ord: Ordering[T]): Unit
 
   /**
     * Computes all american timezones
