@@ -112,7 +112,7 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
     "method allAmericanTimezones is implemented" should {
 
       "return list of correct size" in {
-        implementation.allAmericanTimezones.length shouldBe 165
+        implementation.allAmericanTimezones.length shouldBe 164+-1
       }
     }
   }
