@@ -168,5 +168,6 @@ object Arrays extends Arrays {
     TimeZone.getAvailableIDs
       .withFilter(_.startsWith("America/"))
       .map(_.stripPrefix("America/"))
+      .filter(_.nonEmpty)
       .sorted
 }
