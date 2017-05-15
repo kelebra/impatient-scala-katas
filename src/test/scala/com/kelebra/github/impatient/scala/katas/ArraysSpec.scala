@@ -16,7 +16,7 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
     "method range implemented" should {
 
       "work for integers" in {
-        forAll(Gen.choose(0, 10000)) { (n: Int) =>
+        forAll(Gen.choose(0, 1000)) { (n: Int) =>
           implementation.range(n) shouldBe (0 until n).toArray
         }
       }
