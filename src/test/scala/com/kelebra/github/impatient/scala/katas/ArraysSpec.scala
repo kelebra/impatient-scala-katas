@@ -1,5 +1,6 @@
 package com.kelebra.github.impatient.scala.katas
 
+import org.scalacheck.Gen
 import org.scalamock.scalatest.MockFactory
 import org.scalatest.prop.PropertyChecks
 import org.scalatest.{Matchers, WordSpec}
@@ -15,10 +16,8 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
     "method range implemented" should {
 
       "work for integers" in {
-        forAll { (n: Int) =>
-          whenever(n > 0 && n <= 100) {
-            implementation.range(n) shouldBe (0 until n).toArray
-          }
+        forAll(Gen.choose(0, 10000)) { (n: Int) =>
+          implementation.range(n) shouldBe (0 until n).toArray
         }
       }
     }
