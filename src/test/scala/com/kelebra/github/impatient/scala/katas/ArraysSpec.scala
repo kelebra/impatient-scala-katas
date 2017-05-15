@@ -16,7 +16,7 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
 
       "work for integers" in {
         forAll { (n: Int) =>
-          whenever(n >= 0 && n <= 10) {
+          whenever(n > 0 && n <= 100) {
             implementation.range(n) shouldBe (0 until n).toArray
           }
         }

@@ -4,7 +4,7 @@ organization := "com.kelebra.github"
 
 name := "impatient-scala-katas"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.11.8"
 
 version := "0.1.0-SNAPSHOT"
 

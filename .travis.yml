@@ -7,4 +7,8 @@ scala:
   - 2.11.8
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION clean test
+  - sbt clean coverage test coverageReport
+
+after_success:
+  - export CODECOV_TOKEN="71b9196a-f071-49b6-82d9-8ca1fca8c797"
+  - bash <(curl -s https://codecov.io/bash)
