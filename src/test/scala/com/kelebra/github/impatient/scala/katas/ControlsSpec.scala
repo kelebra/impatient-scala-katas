@@ -1,13 +1,8 @@
 package com.kelebra.github.impatient.scala.katas
 
-import org.scalamock.scalatest.MockFactory
-import org.scalatest.prop.PropertyChecks
-import org.scalatest.{Matchers, WordSpec}
+class ControlsSpec extends ScalaTestSetup[Controls] {
 
-class ControlsSpec extends WordSpec with Matchers with PropertyChecks with MockFactory {
-
-  lazy val implementation: Controls = Controls
-  private val eps = 1e-3
+  val implementation = Controls
 
   private def `work for type` = afterWord("work for type")
 

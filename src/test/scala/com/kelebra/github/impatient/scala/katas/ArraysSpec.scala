@@ -1,15 +1,12 @@
 package com.kelebra.github.impatient.scala.katas
 
 import org.scalacheck.Gen
-import org.scalamock.scalatest.MockFactory
-import org.scalatest.prop.PropertyChecks
-import org.scalatest.{Matchers, WordSpec}
 
 import scala.collection.mutable.ArrayBuffer
 
-class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFactory {
+class ArraysSpec extends ScalaTestSetup[Arrays] {
 
-  val implementation: Arrays = Arrays
+  val implementation = Arrays
 
   "Control Structures and Functions" when {
 
@@ -112,7 +109,7 @@ class ArraysSpec extends WordSpec with Matchers with PropertyChecks with MockFac
     "method allAmericanTimezones is implemented" should {
 
       "return list of correct size" in {
-        implementation.allAmericanTimezones.length shouldBe 164+-1
+        implementation.allAmericanTimezones.length shouldBe 164 +- 1
       }
     }
   }
