@@ -163,6 +163,10 @@ class TuplesSpec extends ScalaTestSetup[Tuples] {
       "work for empty list" in {
         implementation.ltEqGt(List.empty, 5) shouldBe ((0, 0, 0))
       }
+
+      "work for simple list" in {
+        implementation.ltEqGt(1 :: 2 :: 3 :: 4 :: 5 :: Nil, 3) shouldBe ((2, 1, 2))
+      }
     }
   }
 }
