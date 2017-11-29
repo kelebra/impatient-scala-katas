@@ -7,7 +7,7 @@ scala:
   - 2.11.8
 
 script:
-  - sbt clean coverage test coverageReport
+  - travis_wait 30 sbt clean coverage test coverageReport
 
 after_success:
   - export CODECOV_TOKEN="71b9196a-f071-49b6-82d9-8ca1fca8c797"
