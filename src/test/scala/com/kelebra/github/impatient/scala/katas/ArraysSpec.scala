@@ -109,7 +109,7 @@ class ArraysSpec extends ScalaTestSetup[Arrays] {
     "method allAmericanTimezones is implemented" should {
 
       "return list of correct size" in {
-        implementation.allAmericanTimezones.length shouldBe 164 +- 1
+        implementation.allAmericanTimezones.length shouldBe 164 +- 2
       }
     }
   }
