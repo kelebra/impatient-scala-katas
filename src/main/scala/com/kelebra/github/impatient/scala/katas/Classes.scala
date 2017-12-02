@@ -45,7 +45,7 @@ trait Time extends Ordered[Time] {
 
   def minutes: MinuteOfDay
 
-  def before(other: Time): Boolean = compare(other) == -1
+  def before(other: Time): Boolean = this < other
 
   override def compare(other: Time): Int =
     if (hours == other.hours) minutes.value - other.minutes.value
