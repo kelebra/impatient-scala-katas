@@ -49,7 +49,7 @@ object UnitConversion {
 
     def toInches: Inches = (miles.value * 63360) inches
 
-    def toMeters: Miles = (miles.value * 1609.34709) miles
+    def toMeters: Meters = (miles.value * 1609.34709) meters
   }
 
 }
